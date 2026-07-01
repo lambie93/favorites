@@ -1,21 +1,149 @@
 body {
-    background: black; 
+    font-family: Oswald, sans-serif;
+    margin: 0;
+    text-align: center;
+    background-color: black;
     color: white;
 }
 
-header{
-    background: white;
+header {
+    background-color: white;
+    padding: 20px;
     color: black;
 }
 
-footer{
-    background: white;
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
     color: black;
+    font-weight: bold;
+}
+
+img {
+    margin: 10px;
+    border-radius: 8px;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
+.oswald-font {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.glass-card {
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 200px; /* keeps card size stable */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* image */
+.glass-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* orange glass background layer */
+.glass-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(236, 109, 13, 0);
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+/* hover effect: image disappears */
+.glass-card:hover img {
+    opacity: 0.5;
+}
+
+/* hover orange glass shows */
+.glass-card:hover::after {
+    background: #ec6d0d;
+}
+
+/* click effect (toggle class with JS) */
+.glass-card.active img {
+    opacity: 0.5;
+}
+
+.glass-card.active::after {
+    background: #ec6d0d;
+}
+
+/* hover/click lift */
+.glass-card:hover,
+.glass-card.active {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px #ec6d0d;
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    text-decoration: underline;
+    opacity: 0;
+    z-index: 3;
     text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
-header, footer {
-  width: 100%;
-  display: flex;
+/* show text on hover */
+.glass-card:hover .card-text,
+.glass-card.active .card-text {
+    opacity: 1;
 }
-/*  */
+
+.box{
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box1{
+  background-color: #565f98;
+}
+#box2{
+  background-color: black;
+}
+
+#box3{
+
+}
+
+#box4{
+    background-color: #317832;
+}
+.Participated{
+  display: flex;
+  flex-direction: row;
+}
+
+.Attended{
+  display: flex;
+  flex-direction: row;
+}
