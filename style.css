@@ -2,3 +2,16 @@ body {
     background: black; 
     color: white;
 }
+
+header{
+    background: white;
+    color: black;
+}
+
+footer{
+    background: white;
+    color: black;
+    text-align: center;
+}
+
+/*  */
